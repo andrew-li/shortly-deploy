@@ -3,13 +3,14 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 
 db.on('error', function(err){
-  console.log('conection error ', err);
+  console.log('connection error ', err);
 });
 db.once('open', function(){
   console.log('connected.');
 });
 
-mongoose.connect('mongodb://localhost/test');
+var mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost/test';
+mongoose.connect(mongoURI);
 
 module.exports = db;
 

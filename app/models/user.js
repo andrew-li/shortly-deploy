@@ -1,4 +1,4 @@
-//var db = require('../config');
+var db = require('../config');
 
 // require mongoose
 var mongoose = require('mongoose');
