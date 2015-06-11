@@ -89,7 +89,12 @@ module.exports = function(grunt) {
         'git commit',
         'git push azure master',
         'azure site browse'
-        ].join('&&')
+        ].join('&&'),
+        options: {
+           stdout: true,
+           stderr: true,
+           failOnError: true
+         }
       }
     },
   });
